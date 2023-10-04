@@ -11,7 +11,7 @@ export const App = () => {
   const [pokemons, setPokemons] = useState([])
   
   const { info, status, getData } = useFetch({
-    url: `https://pokeapi.co/api/v2/pokemon?limit=20&offset=${20*index}`,
+    url: `https://pokeapi.co/api/v2/pokemon?limit=170&offset=${170*index}`,
     defaultVal: [],
   });
 
@@ -31,7 +31,7 @@ export const App = () => {
       setPokemons(info)
     }
 
-   
+ 
   }, [info])
 
  
@@ -39,7 +39,9 @@ export const App = () => {
 
 
   const showMorePokemons = ()=> {
+    if(index === 64) return
     setIndex((i)=> i+1)
+   
    
   }
 
@@ -49,7 +51,7 @@ export const App = () => {
         
        
       {status === REQUEST_STATUS.LOADING && index === 0 ? <Loader/> : pokemons.map(pokemon => {
-        return <PokeCard name={pokemon.name} img={pokemon.sprites.other.dream_world.front_default} id={pokemon.id} type={pokemon.types[0].type.name}/>
+        return <PokeCard key={pokemon.name} name={pokemon.name} img={pokemon.sprites.other.home.front_default} id={pokemon.id} type={pokemon.types[0].type.name}/>
       })}
       </div>
     {status === REQUEST_STATUS.SUCCESS && <Button variant="outlined" onClick={()=> showMorePokemons()}>Show More</Button> }
