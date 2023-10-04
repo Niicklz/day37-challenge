@@ -11,7 +11,7 @@ export const App = () => {
   const [pokemons, setPokemons] = useState([])
   
   const { info, status, getData } = useFetch({
-    url: `https://pokeapi.co/api/v2/pokemon?limit=170&offset=${170*index}`,
+    url: `https://pokeapi.co/api/v2/pokemon?limit=20&offset=${20*index}`,
     defaultVal: [],
   });
 
