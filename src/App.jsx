@@ -51,7 +51,7 @@ export const App = () => {
         
        
       {status === REQUEST_STATUS.LOADING && index === 0 ? <Loader/> : pokemons.map(pokemon => {
-        return <PokeCard key={pokemon.name} name={pokemon.name} img={pokemon.sprites.other.home.front_default} id={pokemon.id} type={pokemon.types[0].type.name}/>
+        return <PokeCard key={pokemon.name} name={pokemon.name} img={pokemon.sprites.front_default} id={pokemon.id} type={pokemon.types[0].type.name}/>
       })}
       </div>
     {status === REQUEST_STATUS.SUCCESS && <Button variant="outlined" onClick={()=> showMorePokemons()}>Show More</Button> }
