@@ -17,10 +17,10 @@ export const REQUEST_STATUS = {
       setStatus(REQUEST_STATUS.LOADING);
   
       try {
-        const response = await fetch(newUrl || url); // Usar newUrl si está presente
+        const response = await fetch(newUrl || url);
         const { results } = await response.json();
   
-        // Realizar otra petición para obtener más información sobre cada Pokémon
+       
         const pokemonDetails = await Promise.all(
           results.map(async (pokemon) => {
             const response = await fetch(pokemon.url);
@@ -31,9 +31,9 @@ export const REQUEST_STATUS = {
   
 
         
-        setInfo(pokemonDetails); // Usar pokemonDetails en lugar de results
+        setInfo(pokemonDetails);
       
-        console.log(pokemonDetails);
+        
         
         setStatus(REQUEST_STATUS.SUCCESS);
       } catch (error) {
