@@ -1,0 +1,22 @@
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    background: linear-gradient(to right, #d4d3dd, #efefbb);
+    font-family: 'Lato', sans-serif;
+    padding-bottom: 3rem;
+}
+.pokemons-container {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
